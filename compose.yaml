@@ -1,0 +1,14 @@
+services:
+  strands-decider:
+    build: .
+    image: strands-decider
+    ports:
+      - 8000:8000
+    environment:
+      HF_TOKEN: ${HF_TOKEN}
+      HF_HOME: /cache/huggingface
+    volumes:
+      - huggingface:/cache/huggingface
+
+volumes:
+  huggingface:
